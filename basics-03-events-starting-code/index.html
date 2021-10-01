@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <!-- working with event argument -->
+      <button v-on:click="add(5)">Add</button> 
+      <button v-on:click="substract(5)">Remove</button>
+      <p>Result: {{ counter }}</p>
+    <!-- user should be able to enter the name -->
+    <!-- we know that user enter something because we are listening to that input event -->
+      <input type="text" v-on:input="setName">
+      <!-- when you add an event listener and then you point at a function that should be executed when that event occurs
+      that function will automatically get one argument.the browser will ensure that this argument is provided and that will be
+       an object describing the event that occured-->
+       <!-- we are not executing setname with () so i dont overwrite it -->
+      <p>Your Name:{{name}}</p>
+    </section>
+  </body>
+</html>
