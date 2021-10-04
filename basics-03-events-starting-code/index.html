@@ -21,10 +21,11 @@
       <!-- working with event argument -->
       <button v-on:click="add(5)">Add</button> 
       <button v-on:click="substract(5)">Remove</button>
-      <!-- <p v-once>starting counter: {{ counter }}</p>
-this is not working -->
+      <p v-once>starting counter: {{ counter }}</p>
+<!-- this is not working -->
       <p>Result: {{ counter }}</p>
       <input type="text"  v-model="name" >
+      <input type="text"  v-model="lastName" >
       <!-- <input type="text"  v-bind:value="name" v-on:input="setName($event , 'Jerga')" v-on:keyup.enter="confirmInput"> -->
       <button v-on:click="resetInput">Reset Input</button>
       <p>Your Name:{{fullname}}</p>

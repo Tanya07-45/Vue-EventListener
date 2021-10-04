@@ -1,20 +1,38 @@
 const app = Vue.createApp({
   data() {
     return {
-      counter: 0,
+      counter: 3,
       name:'',
-      confirmName:''
+      lastName: '',
+     fullname:'',
     };
   },
+  watch:{ //we didnt call it like data and methods.
+name(value){ //it automatic gets a last value
+  if( value === ''){
+    this.fullname='';
+  }else{
+    this.fullname= value + ' ' + this.lastName;
+  }
+  
+},
+lastName(value){
+  if( value === ''){
+    this.fullname='';
+  }else{
+    this.fullname= this.name + ' ' + value;
+  }
+}
+  },
   computed:{
-    fullname(){
-      console.log("hey you!!");//i have to ask something on this
-      if( this.name === ''){//name is a dependency here
-        return '';
-          }
-        return this.name+' '+"jerga";
+    // fullname(){
+    //   console.log("hey you!!");//i have to ask something on this
+    //   if( this.name === ''){//name is a dependency here
+    //     return '';
+    //       }
+    //     return this.name+' '+"jerga";
         
-    },
+    // },
   
   },
   methods:{
