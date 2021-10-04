@@ -21,17 +21,13 @@
       <!-- working with event argument -->
       <button v-on:click="add(5)">Add</button> 
       <button v-on:click="substract(5)">Remove</button>
-      <!-- if you wan tha twhen user click right than this function works so you have to add event modifier,it means that you only wanna react on right click
-      <button v-on:click.right="substract(5)">Remove</button> -->
+      <!-- <p v-once>starting counter: {{ counter }}</p>
+this is not working -->
       <p>Result: {{ counter }}</p>
-    <!-- user should be able to enter the name -->
-    <!-- we know that user enter something because we are listening to that input event -->
-      <input type="text" v-on:input="setName($event , 'Jerga')" v-on:keyup.enter="confirmInput">
-      <!-- when you add an event listener and then you point at a function that should be executed when that event occurs
-      that function will automatically get one argument.the browser will ensure that this argument is provided and that will be
-       an object describing the event that occured-->
-       <!-- we are not executing setname with () so i dont overwrite it -->
-      <p>Your Name:{{confirmName}}</p>
+      <input type="text"  v-model="name" >
+      <!-- <input type="text"  v-bind:value="name" v-on:input="setName($event , 'Jerga')" v-on:keyup.enter="confirmInput"> -->
+      <button v-on:click="resetInput">Reset Input</button>
+      <p>Your Name:{{fullname}}</p>
       <form v-on:submit ="submitForm">
         <!-- another method is  <form v-on:submit.prevent ="submitForm"> -->
         <input type="text">
